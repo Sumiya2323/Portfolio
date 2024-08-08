@@ -1,9 +1,14 @@
+:root {
+    --black-bg:#222222;
+    --primary-bg:white;
+}
 .header-theme {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     height: 98px;
     text-align:center;
     align-content:center;
+    margin:0px;
 }
 
 .header-theme>img {
@@ -12,12 +17,15 @@
 }
 
 body {
-    margin: 0;
+    margin: 0px;
+}
 
+body > div {
+    background-color: var(--primary-bg);
 }
 
 .header-section {
-    height: 277px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -102,14 +110,15 @@ p {
 }
 .photo-section {
     display:flex;
+    flex-direction: column;
     flex-wrap:wrap;
-    justify-content: center;
+    align-items: center;
     gap:30px;
 
 }
-.photo-section>img {
+.photo-section> a img {
     width:340px;
-    height:210px;
+    height:230px;
 }
 
 @media screen and (min-width:800px) {
@@ -143,33 +152,23 @@ p {
         width:300px;
         height:80px;
     }
-
+    .photo-section> a img {
+        width:600px;
+        height:600px;
+    }
 }
-:root {
-    background: rgba(12, 21, 29, 1);
-}
-.white-theme {
-    background: white;
-    p {
-        color:black;
-    }
-    h1 {
-        color:black;
-    }
-    span {
-        color:black;
-    }
-    #button-2 {
-        background-color: white;
-        color:black;
-    }
-    #button-3 {
-        background-color:rgba(215, 215, 215, 1);
-        color:black;
-    }
-    #button-4 {
-        background-color: white;
-        color:black;
-    }
 
+#toggle {
+    display: none;
+    width:100%;
+}
+
+input[type="checkbox"]:checked  ~ * {
+    --primary-bg: black;
+}   
+label {
+    position: absolute;
+    top: 0;
+    width:100%;
+    text-align: center;
 }
